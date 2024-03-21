@@ -43,7 +43,7 @@ Error | null => {
     return null;
  }
 
- const fetchWrapper = async (url: string, options:RequestInit) => {
+ export const fetchWrapper = async (url: string, options:RequestInit) => {
     const response = await customFetch(url, options);
 
     const responseClone = response.clone();
