@@ -1,12 +1,26 @@
-import React from 'react'
-import { CurrentUser } from './current-user'
+import React from "react";
+import { CurrentUser } from "./current-user";
+import { Layout, Space } from "antd";
 
 const Header = () => {
-  return (
-    <div>
-      <CurrentUser/>
-    </div>
-  )
-}
+  const headerStyles: React.CSSProperties={
+    background: '#fff',
+    justifyContent: 'flex-end',
+    display: 'flex',
+    alignItems: 'center',
+    padding: '0 24px',
+    position: 'sticky',
+    top: 0,
+    zIndex: 999,
+  }
 
-export default Header
+  return (
+    <Layout.Header style={headerStyles}>
+      <Space align="center" size="middle">
+        <CurrentUser />
+      </Space>
+    </Layout.Header>
+  );
+};
+
+export default Header;
