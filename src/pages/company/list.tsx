@@ -8,7 +8,7 @@ import { Text } from '@/components/text';
 import { Company } from '@/graphql/schema.types';
 import { currencyNumber } from '@/utilities';
 
-export const CompanyList = () => {
+export const CompanyList = ({children}: React.PropsWithChildren) => {
 
   const go = useGo();
   const { tableProps, filters } = useTable({
@@ -53,6 +53,7 @@ export const CompanyList = () => {
   
 
   return (
+    <div>
     <List
     breadcrumb={false}
     headerButtons={() => (
@@ -131,6 +132,8 @@ pagination={{
 
       
     </List>
+    {children}
+    </div>
   )
 }
 
