@@ -7,7 +7,7 @@ import { useNotificationProvider } from "@refinedev/antd";
 import "@refinedev/antd/dist/reset.css";
 
 import { dataProvider, liveProvider } from "./providers/data";
-import { Home, ForgotPassword,Login,Register } from "./pages"
+import { Home, ForgotPassword,Login,Register, CompanyList } from "./pages"
 
 import routerBindings, {
 
@@ -20,6 +20,7 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { authProvider } from "./providers/auth";
 import Layout from "./components/layout"
 import { resources } from "./config/resources";
+import Create from "./pages/company/create";
 
 
 
@@ -66,6 +67,11 @@ function App() {
                   </Authenticated>
                    } > 
                     <Route index element={<Home/>}/>
+                    <Route path="/companies" >
+                      <Route index element={<CompanyList/>}/>
+                      <Route path='new' element={<Create/>}/>
+
+                    </Route>
                   
                   
                   </Route>
